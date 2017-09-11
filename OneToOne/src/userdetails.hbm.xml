@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+          
+<hibernate-mapping>
+
+<class name="com.bridgelabz.UserDetails" table="user_details">
+	
+	<id name="userId" type="int" column="user_id">
+		<generator class="foreign">
+			<param name="property">user</param>
+		</generator>
+	</id>
+	<property name="contact" type="int" column="contact"></property>
+	<property name="city" type="string" column="city"></property>
+	<one-to-one name="user" class="com.bridgelabz.User" constrained="false"></one-to-one>
+
+</class>
+
+</hibernate-mapping>

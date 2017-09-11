@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.bridgelabz.Person" table="person">
+
+		<id name="personId" type="int" column="person_id">
+			<generator class="native"></generator>
+		</id>
+
+		<property name="name" type="string" column="name"></property>
+
+		<set name="laptops" table="laptop" inverse="true">
+			<key>
+				<column name="person_id"></column>
+			</key>
+			<one-to-many class="com.bridgelabz.Laptop"/>
+		</set>
+	</class>
+
+</hibernate-mapping>

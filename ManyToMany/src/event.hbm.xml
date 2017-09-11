@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.bridgelabz.Event" table="event">
+
+		<id name="eventId" type="int" column="event_id">
+			<generator class="native"></generator>
+		</id>
+
+		<property name="eventName" type="string" column="event_name"></property>
+
+		
+	</class>
+
+</hibernate-mapping>
