@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+
+.nav-color {
+	background-color: #C7CAD5;
+}
+
+.form-pull-right {
+	float: right;
+	margin-right: 15px;
+}
+
+#btn-container{
+	margin: auto;
+}
+
+.container-margin-top {
+	margin-top: 50px;
+}
+
+.row-margin {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.custom-modal{
+	 margin-top: 100px !important;
+}
