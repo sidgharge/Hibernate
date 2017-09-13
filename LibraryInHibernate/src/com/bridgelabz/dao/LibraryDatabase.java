@@ -2,11 +2,12 @@ package com.bridgelabz.dao;
 
 import java.util.ArrayList;
 
-import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.bridgelabz.hibernateutil.HibernateUtil;
 import com.bridgelabz.model.Book;
@@ -18,7 +19,7 @@ public class LibraryDatabase {
 	final Logger log;
 	
 	public LibraryDatabase() {
-		log = Logger.getLogger(LibraryDatabase.class);
+		log = LoggerFactory.getLogger(LibraryDatabase.class);
 	}
 	
 	/**
@@ -54,13 +55,13 @@ public class LibraryDatabase {
 	public ArrayList<Book> getCategoryData(String category, int userId) {
 		ArrayList<Book> books = new ArrayList<Book>();
 		SessionFactory factory = HibernateUtil.getFactory();
-		Session session = factory.openSession();		
-		
+		Session session = factory.openSession();	
 		Query query = session.createQuery("from Book where category = :category and user_id = :userId");
 		query.setString("category", category);
 		query.setInteger("userId", userId);
 		books = (ArrayList<Book>) query.list();
 		
+		log.debug("Books loaded of the category");
 		return books;
 	}
 	
@@ -78,6 +79,7 @@ public class LibraryDatabase {
 		Book book = (Book) query.uniqueResult();
 		session.close();
 		
+		log.debug("Book details loaded");
 		return book;
 	}
 	

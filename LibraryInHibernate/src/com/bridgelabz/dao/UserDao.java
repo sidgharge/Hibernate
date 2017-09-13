@@ -2,7 +2,6 @@ package com.bridgelabz.dao;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -11,6 +10,8 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Projection;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.bridgelabz.hibernateutil.HibernateUtil;
 import com.bridgelabz.model.User;
@@ -20,14 +21,13 @@ public class UserDao {
 	final Logger log;
 
 	public UserDao() {
-		log = Logger.getLogger(UserDao.class);
+		log = LoggerFactory.getLogger(UserDao.class);
 	}
 
 	/**
 	 * Adds user to the database
 	 * 
-	 * @param user
-	 *            - user to be added
+	 * @param user - user to be added
 	 * @return user id
 	 */
 	public int addUser(User user) {
@@ -55,6 +55,11 @@ public class UserDao {
 		return userId;
 	}
 
+	/**
+	 * @param email- email id entered by user
+	 * @param password- password entered by user
+	 * @return user object if user has entered correct email and password
+	 */
 	public User logInCheck(String email, String password) {
 		SessionFactory factory = HibernateUtil.getFactory();
 		Session session = factory.openSession();
@@ -69,6 +74,10 @@ public class UserDao {
 		return user;
 	}
 	
+	/**
+	 * @param userId - id of user
+	 * @return User object from user id
+	 */
 	public User getUser(int userId) {
 		SessionFactory factory = HibernateUtil.getFactory();
 		Session session = factory.openSession();
@@ -79,6 +88,10 @@ public class UserDao {
 		return user;
 	}
 	
+	/**
+	 * @param user - user object
+	 * @return true if user with entered email id already exists
+	 */
 	public boolean checkIfEmailAlreadyExist(User user) {
 		SessionFactory factory = HibernateUtil.getFactory();
 		Session session = factory.openSession();
@@ -97,6 +110,11 @@ public class UserDao {
 		}		
 	}
 
+	/**
+	 * resets password
+	 * @param email- email id of user
+	 * @param password - new password
+	 */
 	public void resetPassword(String email, String password){
 		SessionFactory factory = HibernateUtil.getFactory();
 		Session session = factory.openSession();

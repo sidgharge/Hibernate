@@ -12,7 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.bridgelabz.dao.UserDao;
 import com.bridgelabz.model.User;
@@ -26,7 +27,7 @@ public class Register extends HttpServlet {
        
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		final Logger log = Logger.getRootLogger();
+		final Logger log = LoggerFactory.getLogger(Register.class);
 		
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
