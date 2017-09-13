@@ -1,6 +1,7 @@
 package com.bridgelabz.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -52,17 +53,23 @@ public class Register extends HttpServlet {
 				log.error("Password is too short");
 				response.sendRedirect("registration.jsp");
 			} else{
+				PrintWriter out = response.getWriter();
+				response.setContentType("text/plain");
 				User user = new User(name, email, contact, gender, password, 0);
 				
 				UserDao dao = new UserDao();
-				int userId = dao.addUser(user);
-				
-				HttpSession session = request.getSession();
-				session.setAttribute("email", email);
-				session.setAttribute("user_id", String.valueOf(userId));
-				session.setAttribute("name", name);
-				
-				response.sendRedirect("homepage.jsp");
+				if (dao.checkIfEmailAlreadyExist(user)) {
+					out.print("Email ID already been used...");
+				} else {	
+					out.print("Success");
+					int userId = dao.addUser(user);
+					
+					HttpSession session = request.getSession();
+					session.setAttribute("email", email);
+					session.setAttribute("user_id", String.valueOf(userId));
+					session.setAttribute("name", name);
+				}
+				out.close();
 			}
 		}
 	}

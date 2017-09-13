@@ -73,7 +73,7 @@
 						</form>
 						<a href="registration.jsp">New user? Create a new account</a>
 						<br>
-						<a href="#">Forgot your password?</a>
+						<a href="ForgotPassword.jsp">Reset your password?</a>
 					</div>
 				</div>
 			</div>

@@ -15,6 +15,12 @@
 <!-- Custom css file link -->
 <link rel="stylesheet" type="text/css" href="styles/registration.css">
 
+
+<!-- Jquery, Ajax link -->
+    <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
 <!-- Custom javascript link -->
 <script type="text/javascript" src="scripts/registration.js"></script>
 
@@ -39,7 +45,7 @@
 
 				<h1>Create An Account</h1>
 				<hr>
-				<form action="Register" method="post">
+				<form action="" method="post">
 
 					<div class="form-group">
 						<label for="name">Full Name:</label> <input type="text"
@@ -71,9 +77,8 @@
 						and <a href="#">privacy policy</a>
 					</p>
 					<center>
-						<input type="submit" value="Create An Account"
-							class="inputs btn-background text-center" id="register-button"
-							onClick="return validateForm()">
+						<input type="button" value="Create An Account"
+							class="inputs btn-background text-center" id="register-button">
 					</center>
 				</form>
 				<p id="last-line">

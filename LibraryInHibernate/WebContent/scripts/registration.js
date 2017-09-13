@@ -39,3 +39,38 @@ function validateForm(){
 	
 	return true;
 }
+
+$(document).ready(function(){
+	$('#register-button').click(function(){
+		if(validateForm()){
+			var isMaleChecked = $("#male").is(":checked");
+			var gender = "";
+			if(isMaleChecked){
+				gender = "Male";
+			} else{
+				gender = "Female";
+			}
+			$.ajax({
+				type : "post",
+				url : "Register",
+				data : {
+					name : $('#name').val(),
+					email : $('#email').val(),
+					contact : $('#mobno').val(),
+					gender : gender,
+					password : $('#password').val()
+				},
+				success : function(data){
+					console.log("Ajax success");
+					if(data == "Success"){
+						window.location = "homepage.jsp";
+					} else{
+						alert("Email ID is already used...");
+					}
+				}
+			});
+		} else{
+			console.log("Validation failed");
+		}		
+	});
+});
