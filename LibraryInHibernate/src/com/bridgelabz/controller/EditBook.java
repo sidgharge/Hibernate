@@ -16,10 +16,7 @@ import com.bridgelabz.model.Book;
 
 
 
-/**
- * Servlet implementation class EditBook
- */
-@WebServlet("/EditBook")
+//@WebServlet("/EditBook")
 public class EditBook extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

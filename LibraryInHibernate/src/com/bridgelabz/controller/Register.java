@@ -18,10 +18,8 @@ import org.slf4j.LoggerFactory;
 import com.bridgelabz.dao.UserDao;
 import com.bridgelabz.model.User;
 
-/**
- * Servlet implementation class Register
- */
-@WebServlet("/Register")
+
+//@WebServlet("/Register")
 public class Register extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 import com.bridgelabz.dao.UserDao;
 import com.bridgelabz.model.User;
 
-@WebServlet("/LogIn")
+//@WebServlet("/LogIn")
 public class LogIn extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -42,9 +42,11 @@ public class LogIn extends HttpServlet {
 			session.setAttribute("email", email);
 			session.setAttribute("user_id", String.valueOf(user.getUserId()));
 			session.setAttribute("name", user.getName());
-			response.sendRedirect("homepage.jsp");
+			response.sendRedirect("homepage");
+			//request.getRequestDispatcher("homepage.jsp").forward(request, response);
 		} else {
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("index");
+			//request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 	}
 

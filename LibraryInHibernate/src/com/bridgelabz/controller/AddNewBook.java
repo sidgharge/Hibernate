@@ -13,7 +13,7 @@ import com.bridgelabz.dao.UserDao;
 import com.bridgelabz.model.Book;
 import com.bridgelabz.model.User;
 
-@WebServlet("/AddNewBook")
+//@WebServlet("/AddNewBook")
 public class AddNewBook extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

@@ -28,7 +28,7 @@
 	// Redirects to homepage if already logged in
 	String email = (String)session.getAttribute("email"); 
 	if(email != null && !email.equals("")){
-		response.sendRedirect("homepage.jsp");
+		response.sendRedirect("homepage");
 	}
 	%>
 
@@ -71,9 +71,9 @@
 									class="btn btn-primary form-control" onClick="return validateLogIn()">
 							</div>
 						</form>
-						<a href="registration.jsp">New user? Create a new account</a>
+						<a href="registration">New user? Create a new account</a>
 						<br>
-						<a href="ForgotPassword.jsp">Reset your password?</a>
+						<a href="resetpasword">Reset your password?</a>
 					</div>
 				</div>
 			</div>

@@ -63,7 +63,7 @@
 		//If not logged in redirects to log in page
 		String email = (String) session.getAttribute("email");
 		if (email == null || email.equals("")) {
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("login");
 		}
         String userId = (String)session.getAttribute("user_id");		
 	%>

@@ -14,10 +14,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-/**
- * Servlet implementation class LogOut
- */
-@WebServlet("/LogOut")
+
+//@WebServlet("/LogOut")
 public class LogOut extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
@@ -30,7 +28,7 @@ public class LogOut extends HttpServlet {
 		session.invalidate();
 		log.debug("Successfully logged out");
 		PrintWriter out = response.getWriter();
-		out.print("index.jsp");
+		out.print("PreLogIn");
 	}
 
 	

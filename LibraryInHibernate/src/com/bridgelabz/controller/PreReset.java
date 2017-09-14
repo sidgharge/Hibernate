@@ -7,20 +7,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.bridgelabz.dao.UserDao;
 
-//@WebServlet("/ResetPassword")
-public class ResetPassword extends HttpServlet {
+@WebServlet("/PreReset")
+public class PreReset extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-		
-		UserDao dao = new UserDao();
-		dao.resetPassword(email, password);
-		
-		response.sendRedirect("index.jsp");
+		request.getRequestDispatcher("ForgotPassword.jsp").forward(request, response);
 	}
 
 	

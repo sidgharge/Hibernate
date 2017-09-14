@@ -82,7 +82,7 @@
 					</center>
 				</form>
 				<p id="last-line">
-					Already have an account? <a href="index.jsp">Sign in.</a>
+					Already have an account? <a href="PreLogIn">Sign in.</a>
 				</p>
 
 			</div>

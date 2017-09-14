@@ -23,7 +23,7 @@
 			<div class="col-lg-5 col-md-6 col-sm-8 col-xs-8 center-col">
 				<h1>Reset Password</h1>
 				<hr>
-				<form action="ResetPassword" method="post">
+				<form action="PreLogIn" method="post">
 					<div class="form-group">
 						<label for="email">Email address:</label> <input type="email"
 							class="form-control" name="email" id="email">

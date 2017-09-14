@@ -63,7 +63,7 @@ $(document).ready(function(){
 				success : function(data){
 					console.log("Ajax success");
 					if(data == "Success"){
-						window.location = "homepage.jsp";
+						window.location = "PreLogIn";
 					} else{
 						alert("Email ID is already used...");
 					}

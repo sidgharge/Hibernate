@@ -11,10 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.bridgelabz.dao.LibraryDatabase;
 import com.bridgelabz.model.Book;
 
-/**
- * Servlet implementation class BookDeatailsLoader
- */
-@WebServlet("/BookDetailsLoader")
+
+//@WebServlet("/BookDetailsLoader")
 public class BookDetailsLoader extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

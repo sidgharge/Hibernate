@@ -14,7 +14,7 @@ import com.bridgelabz.dao.LibraryDatabase;
 import com.bridgelabz.model.Book;
 
 
-@WebServlet("/BookTitleLoader")
+//@WebServlet("/BookTitleLoader")
 public class BookTitleLoader extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

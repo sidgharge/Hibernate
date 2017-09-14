@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.bridgelabz.dao.LibraryDatabase;
 
 
-@WebServlet("/DeleteBook")
+//@WebServlet("/DeleteBook")
 public class DeleteBook extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
